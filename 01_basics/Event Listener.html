@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+
+    <button id="btn1">Click Here</button>
+    <button id="btn2">Multiple Events</button>
+    <button id="btn3">Multiple Functions</button>
+
+    <div id="div1">
+        <button onclick="remevent()">Remove Event</button>
+    </div>
+
+    <script>
+        document.getElementById("btn1").addEventListener('click',fun1)
+        function fun1()
+        {
+            alert("We are learning eventlistener")
+        }
+        document.getElementById("btn2").addEventListener('click',fun2)
+        document.getElementById("btn2").addEventListener('mouseover',fun3)
+        document.getElementById("btn2").addEventListener('mouseout',fun4)
+        function fun2()
+        {
+            document.bgColor="pink"
+        }
+        function fun3()
+        {
+            document.bgColor="lightblue"
+        }
+        function fun4()
+        {
+            document.bgColor="beige"
+        }
+        document.getElementById("btn3").addEventListener('click',fun5)
+        document.getElementById("btn3").addEventListener('click',fun6)
+        document.getElementById("btn3").addEventListener('click',fun7)
+        function fun5()
+        {
+            document.getElementById("p1").innerHTML="SevenMentor Pvt Ltd."
+        }
+        function fun6()
+        {
+            document.getElementById("p1").style.color="black"
+            document.getElementById("p1").style.fontsize="30px"
+        }
+        function fun7()
+        {
+            alert("We have called multiple functions using click event")
+        }
+        document.getElementById("div1").addEventListener('mousemove',fun8)
+        function fun8()
+        {
+            document.getElementById("p2").innerHTML=Math.random()
+        }
+        function remevent()
+        {
+            document.getElementById("div1").removeEventListener('mousemove',fun8)
+        }
+    </script>
+</body>
+</html>
