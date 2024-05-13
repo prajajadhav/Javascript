@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function kpress()
+        {
+            alert("You have pressed a key")
+        }
+        function kdown()
+        {
+            document.getElementById("t2").style.color="red"
+            document.getElementById("t2").style.fontSize="30px"
+        }
+        function kup()
+        {
+            let x=document.getElementById("t3")
+            x.value=x.value.toUpperCase()
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter First Name" onkeypress="kpress()"><br><br>
+        <input type="text" placeholder="Enter Last Name" id="t3" onkeydown="kdown()"><br><br>
+        <input type="text" placeholder="Enter City" id="t3" onkeyup="kup()"><br><br>
+        <input type="submit" value="SUBMIT">
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1
+        {
+            height: 300px;
+            width: 300px;
+            background-color: pink;
+            position: relative;
+        }
+        #div2
+        {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: purple;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div id="div2"></div>
+    </div>
+    <button onclick="anim()">Animate ball</button>
+</body>
+</html>
+<script>
+    function anim()
+    {
+        let id=null
+        let ball=document.getElementById("div2")
+        var l=0
+        var t=0
+        var r=0
+        var b=0
+        clearInterval(id)
+        id=setInterval(fun1,5)
+        function fun1()
+        {
+            if(l==250)
+            {
+                clearInterval(id)
+                id=setInterval(fun2,5)
+            }
+            else
+            {
+                l++
+                t++
+                r++
+                b++
+                ball.style.left=l+"px"
+                ball.style.top=t+"px"
+                ball.style.right=r+"px"
+                ball.style.bottom=b+"px"
+            }
+        }
+        function fun2()
+        {
+            if(l==0)
+            {
+                clearInterval(id)
+                id=setInterval(fun1,5)
+            }
+            else
+            {
+                l--
+                t--
+                r--
+                b--
+                ball.style.left=l+"px"
+                ball.style.top=t+"px"
+                ball.style.right=r+"px"
+                ball.style.bottom=b+"px"
+
+            }
+        }
+    }
+</script>
