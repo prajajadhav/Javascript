@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="frm1">
+        <label>Username:</label>
+        <input type="text" name="uname"><br><br>
+        <label>Password:</label>
+        <input type="password" name="pwd"><br><br>
+        <button onclick="valid()">Validate</button>
+    </form>
+</body>
+</html>
+<script>
+    function valid()
+    {
+        let name=document.frm1.uname.value
+        let pass=document.frm1.uname.value
+        flag=0
+        //username validation
+        for (let i=0;i<name.length;i++)
+        {
+            if((name[i])=='!' || (name[i])=='@' (name[i])=='#'|| (name[i])=='$' || (name[i])=='&' || (name[i])=='%' )
+            {
+                flag=1
+            }
+            else
+            {
+                flag=0
+            }
+        }
+        if(name.length==0)
+        {
+            alert("Please fill username")
+        }
+        else if(name.length<4 || name.length>6)
+            {
+                alert("Username should br from 4 to 6 characters")
+            }
+            else if(flag=1)
+            {
+                alert("Special symbols are not allowed in username")
+                flag=0
+            }
+            else
+            {
+                alert("Username accepted")
+            }
+            
+        //password validation
+        flag=0
+        for (let i=0;i<pass.length;i++)
+        {
+            if((pass[i])=='!' || (pass[i])=='@' (pass[i])=='#'|| (pass[i])=='$' || (pass[i])=='&' || (pass[i])=='%' )
+            {
+                flag=1
+            }
+            else
+            {
+                flag=0
+            }
+        }
+        if(pass.length==0)
+        {
+            alert("Please fill Password")
+        }
+        else if(pass.length<4 || pass.length>6)
+            {
+                alert("Password should be from 4 to 6 characters")
+            }
+            else if(flag=1)
+            {
+                alert("Special symbols are not allowed in Password")
+                flag=0
+            }
+            else
+            {
+                alert("Password accepted")
+            }
+    }
+</script>
